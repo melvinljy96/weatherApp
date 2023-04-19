@@ -155,7 +155,7 @@ function WeatherApp() {
   // Render weather data and search history
   return (
     <div className={`${backgroundClass} min-h-screen flex flex-col items-center justify-start pt-10 gap-6`}>
-        <Fab className={`${toggleClass}`} onClick={handleToggle}>
+        <Fab className={`${toggleClass} fixed bottom-0 right-0 m-6`} onClick={handleToggle}>
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </Fab>
         <div className="flex flex-col md:flex-row gap-4 w-full p-4 md:w-1/2 md:p-0">
