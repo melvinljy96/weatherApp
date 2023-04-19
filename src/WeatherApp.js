@@ -199,7 +199,7 @@ function WeatherApp() {
             {showAlert && (
                  <Alert
                     severity="warning"
-                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
+                    className="custom-alert"
                     onClose={() => setShowAlert(false)}
                 >
                     Please enter both city and country.
@@ -208,7 +208,7 @@ function WeatherApp() {
             {showError && (
                  <Alert
                     severity="error"
-                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
+                    className="custom-alert"
                     onClose={() => setShowAlert(false)}
                 >
                     Unable to find weather data for specified location. Please check the input and try again.
@@ -217,7 +217,7 @@ function WeatherApp() {
             {showInfo && (
                  <Alert
                     severity="info"
-                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
+                    className="custom-alert"
                     onClose={() => setShowInfo(false)}
                 >
                     The inputs are cleared. Feel free to type again.
@@ -226,7 +226,7 @@ function WeatherApp() {
             {showDelete && (
                 <Alert
                     severity="success"
-                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
+                    className="custom-alert"
                     onClose={() => setShowDelete(false)}
                 >
                     The selected record is deleted.

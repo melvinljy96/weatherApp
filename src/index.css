@@ -15,3 +15,7 @@
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  .custom-alert {
+    @apply absolute top-0 right-0 m-2 transform transition-all duration-500;
+  }
