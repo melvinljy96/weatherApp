@@ -179,16 +179,16 @@ function WeatherApp() {
                     size="small"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
-                    InputProps={{ style: { color: 'white' }, className: `${textFieldClass} rounded-lg` }}
+                    InputProps={{ className: `${textFieldClass} rounded-lg` }}
                 />
             </div>
             <div className="flex flex-row gap-2 justify-center">
-                <div className={`${buttonbgClass} flex rounded-2xl w-12 h-12 items-center text-center justify-center`}>
+                <div className={`${buttonbgClass} custom-search-reset-button`}>
                     <IconButton aria-label="search" onClick={() => getOpenWeatherData(city, country)} style={{ color: 'white' }}>
                         <SearchOutlinedIcon />
                     </IconButton>
                 </div>
-                <div className={`${buttonbgClass} flex rounded-2xl w-12 h-12 items-center text-center justify-center`}>
+                <div className={`${buttonbgClass} custom-search-reset-button`}>
                     <IconButton aria-label="reset" onClick={resetInputs} style={{ color: 'white' }}>
                         <RotateLeftIcon />
                     </IconButton>

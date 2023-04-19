@@ -36,4 +36,8 @@
     @apply flex flex-row justify-end gap-2;
   }
 
+  .custom-search-reset-button {
+    @apply flex rounded-2xl w-12 h-12 items-center text-center justify-center;
+  }
+
   
