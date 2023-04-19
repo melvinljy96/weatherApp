@@ -18,7 +18,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-const API_KEY = '3b2d39d12dc0243e2dd088436a6b59b4';
+//Please insert the API Key from OpenWeather before proceeding
+const API_KEY = '';
 
 function WeatherApp() {
     const [city, setCity] = useState('');
