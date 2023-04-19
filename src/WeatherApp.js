@@ -18,8 +18,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-//Please insert the API Key from OpenWeather before proceeding
-const API_KEY = '';
+const API_KEY = '3b2d39d12dc0243e2dd088436a6b59b4';
 
 function WeatherApp() {
     const [city, setCity] = useState('');
@@ -154,8 +153,8 @@ function WeatherApp() {
 
   // Render weather data and search history
   return (
-    <div className={`${backgroundClass} min-h-screen flex flex-col items-center justify-start pt-10 gap-6`}>
-        <Fab className={`${toggleClass} fixed bottom-0 right-0 m-6`} onClick={handleToggle}>
+    <div className={`${backgroundClass} min-h-screen flex flex-col items-center justify-start pt-20 gap-6`}>
+        <Fab className={`${toggleClass} fixed bottom-0 right-0 m-3`} onClick={handleToggle}>
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </Fab>
         <div className="flex flex-col md:flex-row gap-4 w-full p-4 md:w-1/2 md:p-0">
@@ -195,10 +194,12 @@ function WeatherApp() {
                     </IconButton>
                 </div>
             </div>
+
+            {/* Alert componrnts */}
             {showAlert && (
                  <Alert
                     severity="warning"
-                    className="absolute top-0 right-0 mt-2 mr-2 transform transition-all duration-500"
+                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
                     onClose={() => setShowAlert(false)}
                 >
                     Please enter both city and country.
@@ -207,7 +208,7 @@ function WeatherApp() {
             {showError && (
                  <Alert
                     severity="error"
-                    className="absolute top-0 right-0 mt-2 mr-2 transform transition-all duration-500"
+                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
                     onClose={() => setShowAlert(false)}
                 >
                     Unable to find weather data for specified location. Please check the input and try again.
@@ -216,7 +217,7 @@ function WeatherApp() {
             {showInfo && (
                  <Alert
                     severity="info"
-                    className="absolute top-0 right-0 mt-2 mr-2 transform transition-all duration-500"
+                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
                     onClose={() => setShowInfo(false)}
                 >
                     The inputs are cleared. Feel free to type again.
@@ -225,7 +226,7 @@ function WeatherApp() {
             {showDelete && (
                 <Alert
                     severity="success"
-                    className="absolute top-0 right-0 mt-2 mr-2 transform transition-all duration-500"
+                    className="absolute top-0 right-0 m-2 transform transition-all duration-500"
                     onClose={() => setShowDelete(false)}
                 >
                     The selected record is deleted.
@@ -233,6 +234,7 @@ function WeatherApp() {
             )}
         </div>
         {weatherData ? (
+            // If able to get response data from OpenWeather API
             <div className='p-4 md:p-0 w-full md:w-1/2'>
                 <div className={`${allTextClass} ${topSearchClass} flex flex-col w-full items-center backdrop-filter backdrop-blur-sm rounded-2xl p-5 md:p-8 gap-8 mt-16 md:mt-32`}>
                     <div className='flex flex-col bg-transparent gap-4 w-full'>
@@ -269,6 +271,7 @@ function WeatherApp() {
                             </div>
                         </div>
                     </div>
+                    {/* Search History section */}
                     <div className={`${midSearchClass} flex flex-col gap-4 w-full p-2 md:p-4 rounded-2xl`}>
                         <h2 className='font-semibold'>Search History</h2>
                         {history.length > 0 ? (
@@ -276,7 +279,7 @@ function WeatherApp() {
                                 {history.map((search, index) => (
                                     <ListItem key={index} className='p-1'>
                                         <div className={`${bottomSearchClass} flex flex-row justify-between p-2 rounded-2xl items-center w-full gap-4`}>
-                                            <div className='flex flex-col md:flex-row justify-between w-full gap-1 text-sm md:text-base'>
+                                            <div className='flex flex-col md:flex-row justify-between w-full gap-1 text-xs md:text-base'>
                                                 <div>{`${search.city}, ${search.country}`}</div>
                                                 <div>{`${search.datetime}`}</div>
                                             </div>
@@ -299,6 +302,7 @@ function WeatherApp() {
                 </div>
             </div>
             ) : (
+                // If no response from API
                 <div className='p-4 md:p-0 w-full md:w-1/2'>
                     <div className={`${allTextClass} ${midSearchClass} flex flex-col gap-4 w-full p-4 rounded-xl`}>
                         <h2 className='font-semibold'>Search History</h2>
@@ -329,7 +333,6 @@ function WeatherApp() {
                     </div>
                 </div>
         )}
-
 
         {/* Dialog component for deletion */}
         <Dialog open={openDialog} onClose={handleCloseDialog} className='rounded-2xl'>
