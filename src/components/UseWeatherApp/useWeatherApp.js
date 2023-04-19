@@ -40,7 +40,8 @@ export const useWeatherApp = () => {
       return;
     }
 
-    const API_KEY = '3b2d39d12dc0243e2dd088436a6b59b4';
+    // Please insert API Key before proceeding
+    const API_KEY = '';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`;
 
     try {
