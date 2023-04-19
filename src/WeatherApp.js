@@ -277,7 +277,7 @@ function WeatherApp() {
                         {history.length > 0 ? (
                             <List>
                                 {history.map((search, index) => (
-                                    <ListItem key={index} className='p-1'>
+                                    <ListItem key={index} className='p-0 py-1'>
                                         <div className={`${bottomSearchClass} flex flex-row justify-between p-2 rounded-2xl items-center w-full gap-4`}>
                                             <div className='flex flex-col md:flex-row justify-between w-full gap-1 text-xs md:text-base'>
                                                 <div>{`${search.city}, ${search.country}`}</div>
