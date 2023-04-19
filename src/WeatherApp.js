@@ -272,18 +272,18 @@ function WeatherApp() {
                         </div>
                     </div>
                     {/* Search History section */}
-                    <div className={`${midSearchClass} flex flex-col gap-4 w-full p-4 rounded-2xl`}>
+                    <div className={`${midSearchClass} custom-history`}>
                         <h2 className='font-semibold'>Search History</h2>
                         {history.length > 0 ? (
                             <List>
                                 {history.map((search, index) => (
                                     <ListItem key={index} className='p-0 py-1'>
-                                        <div className={`${bottomSearchClass} flex flex-row justify-between p-2 rounded-2xl items-center w-full gap-4`}>
-                                            <div className='flex flex-col md:flex-row justify-between w-full gap-1 text-xs md:text-base'>
+                                        <div className={`${bottomSearchClass} custom-history-listitem`}>
+                                            <div className='custom-history-description'>
                                                 <div>{`${search.city}, ${search.country}`}</div>
                                                 <div>{`${search.datetime}`}</div>
                                             </div>
-                                            <div className='flex flex-row justify-end gap-2'>
+                                            <div className='custom-history-iconbutton'>
                                                 <IconButton aria-label="search" size ="small" onClick={() => getOpenWeatherData(search.city, search.country)} className={`${iconButtonClass}`} style={{ color: 'grey' }}>
                                                     <SearchOutlinedIcon />
                                                 </IconButton>
@@ -304,18 +304,18 @@ function WeatherApp() {
             ) : (
                 // If no response from API
                 <div className='p-4 md:p-0 w-full md:w-1/2'>
-                    <div className={`${allTextClass} ${midSearchClass} flex flex-col gap-4 w-full p-4 rounded-xl`}>
+                    <div className={`${allTextClass} ${midSearchClass} custom-history`}>
                         <h2 className='font-semibold'>Search History</h2>
                         {history.length > 0 ? (
                             <List>
                                 {history.map((search, index) => (
                                     <ListItem key={index} className='p-1'>
-                                        <div className={`${bottomSearchClass} flex flex-row justify-between p-2 rounded-2xl items-center w-full gap-4`}>
-                                            <div className='flex flex-col md:flex-row justify-between w-full gap-1 text-sm md:text-base'>
+                                        <div className={`${bottomSearchClass} custom-history-listitem`}>
+                                            <div className='custom-history-description'>
                                                 <div>{`${search.city}, ${search.country}`}</div>
                                                 <div>{`${search.datetime}`}</div>
                                             </div>
-                                            <div className='flex flex-row justify-end gap-2'>
+                                            <div className='custom-history-iconbutton'>
                                                 <IconButton aria-label="search" size ="small" onClick={() => getOpenWeatherData(search.city, search.country)} className={`${iconButtonClass}`} style={{ color: 'grey' }}>
                                                     <SearchOutlinedIcon />
                                                 </IconButton>
