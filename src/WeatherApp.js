@@ -272,7 +272,7 @@ function WeatherApp() {
                         </div>
                     </div>
                     {/* Search History section */}
-                    <div className={`${midSearchClass} flex flex-col gap-4 w-full p-2 md:p-4 rounded-2xl`}>
+                    <div className={`${midSearchClass} flex flex-col gap-4 w-full p-4 rounded-2xl`}>
                         <h2 className='font-semibold'>Search History</h2>
                         {history.length > 0 ? (
                             <List>
